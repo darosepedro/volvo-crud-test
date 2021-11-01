@@ -26,6 +26,10 @@ namespace VolvoCrudApi.Requests
     {
         public CaminhaoInsertRequestValidator()
         {
+            //Não foi necessário aplicar a regra obrigando apenas FH ou FM, conforme consta no requisisto,
+            //pois estamos usando uma tabela para guardar os tipos, o que naturalmente já controla quais tipos
+            //poderão ser usados, por FK, com a vantagem de termos uma lista dinâmica, para o caso de necessidade
+            //de novos tipos serem acrescentados no futuro
             RuleFor(x => x.ModeloId).NotNull();
             RuleFor(x => x.AnoModelo)
                 .GreaterThanOrEqualTo(v => v.AnoFabricacao)
@@ -43,6 +47,10 @@ namespace VolvoCrudApi.Requests
     {
         public CaminhaoUpdateRequestValidator()
         {
+            //Não foi necessário aplicar a regra obrigando apenas FH ou FM, conforme consta no requisisto,
+            //pois estamos usando uma tabela para guardar os tipos, o que naturalmente já controla quais tipos
+            //poderão ser usados, por FK, com a vantagem de termos uma lista dinâmica, para o caso de necessidade
+            //de novos tipos serem acrescentados no futuro
             RuleFor(x => x.Id).NotNull();
             RuleFor(x => x.ModeloId).NotNull();
             RuleFor(x => x.AnoModelo)

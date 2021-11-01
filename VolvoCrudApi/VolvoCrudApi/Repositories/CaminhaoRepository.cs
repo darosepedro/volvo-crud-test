@@ -35,7 +35,9 @@ namespace VolvoCrudApi.Repositories
 
         public async Task<IEnumerable<Caminhao>> GetList()
         {
-            return await _context.Caminhoes.ToListAsync();
+            return await _context.Caminhoes
+                .Include(c => c.Modelo)
+                .AsNoTracking().ToListAsync();
         }
 
         public async Task<Caminhao> Delete(int Id)
