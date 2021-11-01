@@ -1,12 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using Moq;
-using System;
-using System.Threading.Tasks;
-using VolvoCrudApi;
-using VolvoCrudApi.Controllers;
-using VolvoCrudApi.Models;
-using VolvoCrudApi.Repositories;
 using VolvoCrudApi.Requests;
 using Xunit;
 
@@ -14,7 +5,9 @@ namespace VolvoCrudApi_UnitTests
 {
     public class Tests
     {
-
+        //Usei Theory, que usa dados dinâmicos como massa de teste.
+        //Estes dados dinâmicos estão na classe CaminhaoInsertRequestData, separados
+        //em um arquivo chamado Massa.cs
         [Theory]
         [ClassData(typeof(CaminhaoInsertRequestData))]
         public void GetByIdAsync_Returns_Product(CaminhaoInsertRequest massa, bool cenario_valido)
